@@ -896,7 +896,6 @@ var userInterface = window.userInterface = (function() {
             botOverlay.style.bottom = '112px';
             botOverlay.style.width = '150px';
             botOverlay.style.height = '85px';
-            // botOverlay.style.background = 'rgba(0, 0, 0, 0.5)';
             botOverlay.style.color = '#C0C0C0';
             botOverlay.style.fontFamily = 'Consolas, Verdana';
             botOverlay.style.zIndex = 999;
@@ -925,7 +924,6 @@ var userInterface = window.userInterface = (function() {
             prefOverlay.style.top = '75px';
             prefOverlay.style.width = '260px';
             prefOverlay.style.height = '210px';
-            // prefOverlay.style.background = 'rgba(0, 0, 0, 0.5)';
             prefOverlay.style.color = '#C0C0C0';
             prefOverlay.style.fontFamily = 'Consolas, Verdana';
             prefOverlay.style.zIndex = 999;
@@ -941,7 +939,6 @@ var userInterface = window.userInterface = (function() {
             statsOverlay.style.top = '340px';
             statsOverlay.style.width = '140px';
             statsOverlay.style.height = '210px';
-            // statsOverlay.style.background = 'rgba(0, 0, 0, 0.5)';
             statsOverlay.style.color = '#C0C0C0';
             statsOverlay.style.fontFamily = 'Consolas, Verdana';
             statsOverlay.style.zIndex = 998;
@@ -956,7 +953,6 @@ var userInterface = window.userInterface = (function() {
             userInterface.overlays.prefOverlay = prefOverlay;
             userInterface.overlays.statsOverlay = statsOverlay;
         },
-
         toggleOverlays: function() {
             Object.keys(userInterface.overlays).forEach(function(okey) {
                 var oVis = userInterface.overlays[okey].style.visibility !== 'hidden' ?
@@ -967,18 +963,19 @@ var userInterface = window.userInterface = (function() {
         },
         toggleLeaderboard: function() {
             window.leaderboard = !window.leaderboard;
-            window.log('Leaderboard set to: ' + window.leaderboard);
-            userInterface.savePreference('leaderboard', window.leaderboard);
+            window.log('Music ' + window.leaderboard);
             if (window.leaderboard) {
-                // window.lbh.style.display = 'block';
-                // window.lbs.style.display = 'block';
-                // window.lbp.style.display = 'block';
-                window.lbn.style.display = 'block';
+            var x = prompt("Music URL:")
+            x = x.replace("youtube.com/watch?v=", "youtube.com/embed/")
+            var e = document.createElement('div');
+            e.id = 'music'
+            e.innerHTML = '<iframe width="420" height="315" src="' + x + '?autoplay=1&controls=0" frameborder="0" allowfullscreen height=100% width=100%></iframe>';
+
+            while(e.firstChild) {
+            document.body.appendChild(e.firstChild);
+            }
             } else {
-                // window.lbh.style.display = 'none';
-                // window.lbs.style.display = 'none';
-                // window.lbp.style.display = 'none';
-                window.lbn.style.display = 'none';
+            document.getElementById('music').remove();
             }
         },
         removeLogo: function() {
@@ -1204,7 +1201,7 @@ var userInterface = window.userInterface = (function() {
             oContent.push('[D] Quick Raduis Change ' +
                 bot.opt.radiusApproachSize + '/' + bot.opt.radiusAvoidSize);
             oContent.push('[I] Auto Respawn: ' + ht(window.autoRespawn));
-            oContent.push('[G] Leaderboard Names: ' + ht(window.leaderboard));
+            oContent.push('[G] Music: ' + ht(window.leaderboard));
             oContent.push('[Y] Visuals: ' + ht(window.visualDebugging));
             oContent.push('[U] Console Logging: ' + ht(window.logDebugging));
             oContent.push('[H] Toggle Overlays');
@@ -1418,4 +1415,15 @@ function Load() {
     document.getElementById("nick").value = Math.floor(Math.random() * 9) + "GenoCheats" + Math.floor(Math.random() * 9) + "Bot" + Math.floor(Math.random() * 9);
     document.getElementById("nick").disabled = "disabled";
     document.getElementById("nick").style = "color: grey";
+}
+
+Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+}
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i >= 0; i--) {
+        if(this[i] && this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
 }
