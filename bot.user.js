@@ -1246,7 +1246,7 @@ var userInterface = window.userInterface = (function() {
             oContent.push("|---Slither.IO-Bot---|");
             oContent.push("+--------------------+");
             oContent.push("");
-            oContent.push('[T / Right click] Enable Bot: ' + ht(bot.isBotEnabled));
+            oContent.push('[T / Right click] Bot: ' + ht(bot.isBotEnabled));
             oContent.push('[O] Low Quality: ' + ht(window.mobileRender));
             oContent.push('[A/S] Bot Radius: ' + bot.opt.radiusMult);
             oContent.push('[D] Quick Raduis Change ' +
