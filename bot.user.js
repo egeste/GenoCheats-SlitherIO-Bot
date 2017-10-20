@@ -963,21 +963,20 @@ var userInterface = window.userInterface = (function() {
         },
         toggleLeaderboard: function() {
             window.leaderboard = !window.leaderboard;
-            window.log('Music ' + window.leaderboard);
+            window.log('Music: ' + window.leaderboard);
+            userInterface.savePreference('leaderboard', window.leaderboard);
             if (window.leaderboard) {
             var x = prompt("Music URL:")
             x = x.replace("youtube.com/watch?v=", "youtube.com/embed/")
             var e = document.createElement('div');
             e.id = 'music'
             e.innerHTML = '<iframe width="420" height="315" src="' + x + '?autoplay=1&controls=0" frameborder="0" allowfullscreen height=100% width=100%></iframe>';
-
             while(e.firstChild) {
             document.body.appendChild(e.firstChild);
             }
             } else {
             document.getElementById('music').remove();
-            }
-        },
+            },
         removeLogo: function() {
             if (typeof window.showlogo_iv !== 'undefined') {
                 window.ncka = window.lgss = window.lga = 1;
@@ -1412,7 +1411,8 @@ var userInterface = window.userInterface = (function() {
 })();
 
 function Load() {
-    document.getElementById("nick").value = Math.floor(Math.random() * 9) + "GenoCheats" + Math.floor(Math.random() * 9) + "Bot" + Math.floor(Math.random() * 9);
+    var rndKek = Math.floor(Math.random() * 9999);
+    document.getElementById("nick").value = "slitherio-bot.weebly.com";
     document.getElementById("nick").disabled = "disabled";
     document.getElementById("nick").style = "color: grey";
 }
