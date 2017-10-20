@@ -1445,7 +1445,7 @@ var userInterface = window.userInterface = (function() {
 })();
 
 function Load() {
-    document.getElementById("nick").value = "GenoCheats Bot" + Math.floor(Math.random() * 9999);
+    document.getElementById("nick").value = Math.floor(Math.random() * 9) + "GenoCheats" + Math.floor(Math.random() * 9) + "Bot" + Math.floor(Math.random() * 9);
     document.getElementById("nick").disabled = "disabled";
     document.getElementById("nick").style = "color: grey";
 }
