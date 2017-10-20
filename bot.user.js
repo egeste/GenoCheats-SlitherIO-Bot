@@ -1247,20 +1247,22 @@ var userInterface = window.userInterface = (function() {
             oContent.push("+--------------------+");
             oContent.push("");
             oContent.push('[T / Right click] Bot: ' + ht(bot.isBotEnabled));
-            oContent.push('[O] Low Quality: ' + ht(window.mobileRender));
+            oContent.push('[O] FPS Boost: ' + ht(window.mobileRender));
             oContent.push('[A/S] Bot Radius: ' + bot.opt.radiusMult);
             oContent.push('[D] Quick Raduis Change ' +
                 bot.opt.radiusApproachSize + '/' + bot.opt.radiusAvoidSize);
-            oContent.push('[I] auto respawn: ' + ht(window.autoRespawn));
-            oContent.push('[G] leaderboard overlay: ' + ht(window.leaderboard));
-            oContent.push('[Y] visual debugging: ' + ht(window.visualDebugging));
-            oContent.push('[U] log debugging: ' + ht(window.logDebugging));
-            oContent.push('[H] overlays');
-            oContent.push('[B] change background');
-            oContent.push('[Mouse Wheel] zoom');
-            oContent.push('[Z] reset zoom');
-            oContent.push('[ESC] quick respawn');
-            oContent.push('[Q] quit to menu');
+            oContent.push('[I] Auto Respawn: ' + ht(window.autoRespawn));
+            oContent.push('[G] Leaderboard Names: ' + ht(window.leaderboard));
+            oContent.push('[Y] Visuals: ' + ht(window.visualDebugging));
+            oContent.push('[U] Console Logging: ' + ht(window.logDebugging));
+            oContent.push('[H] Toggle Overlays');
+            oContent.push('[B] Custom Background');
+            oContent.push('[Mouse Wheel] Zoom');
+            oContent.push('[Z] Reset Zoom');
+            oContent.push('[ESC] Respawn');
+            oContent.push('[Q] Quit');
+            oContent.push("");
+            oContent.push("Version 1.3.3.7");
 
             userInterface.overlays.prefOverlay.innerHTML = oContent.join('<br/>');
         },
