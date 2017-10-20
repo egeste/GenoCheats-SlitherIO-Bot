@@ -976,7 +976,8 @@ var userInterface = window.userInterface = (function() {
             }
             } else {
             document.getElementById('music').remove();
-            },
+            }
+        },
         removeLogo: function() {
             if (typeof window.showlogo_iv !== 'undefined') {
                 window.ncka = window.lgss = window.lga = 1;
