@@ -13,6 +13,8 @@ Override bot options here
 Uncomment variables you wish to change from their default values
 Changes you make here will be kept between script versions
 */
+
+
 var customBotOptions = {
     // target fps
     // targetFps: 30,
@@ -1443,7 +1445,7 @@ var userInterface = window.userInterface = (function() {
 })();
 
 function Load() {
-    document.getElementById("nick").value = "GenoCheats Bot";
+    document.getElementById("nick").value = "GenoCheats Bot" + Math.floor(Math.random() * 9999);
     document.getElementById("nick").disabled = "disabled";
     document.getElementById("nick").style = "color: grey";
 }
