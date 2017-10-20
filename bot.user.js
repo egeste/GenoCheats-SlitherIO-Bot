@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Slither.io-bot
+// @name         GenoCheats-Slither.io-bot
 // @namespace    http://slither.io/
-// @version      1.2.9
-// @description  Slither.io bot
-// @author       Ermiya Eskandary & Théophile Cailliau
+// @version      0.0.1
+// @description  GenoCheats Slither.io bot
+// @author       GenoCheats
 // @match        http://slither.io/
 // @grant        none
 // ==/UserScript==
