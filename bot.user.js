@@ -1241,8 +1241,6 @@ var userInterface = window.userInterface = (function() {
             oContent.push('[Z] Reset Zoom');
             oContent.push('[ESC] Respawn');
             oContent.push('[Q] Quit');
-            oContent.push("");
-            oContent.push("Version 1.3.3.7");
 
             userInterface.overlays.prefOverlay.innerHTML = oContent.join('<br/>');
         },
