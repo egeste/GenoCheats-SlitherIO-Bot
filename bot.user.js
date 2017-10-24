@@ -1212,6 +1212,8 @@ var userInterface = window.userInterface = (function() {
             oContent.push('[Q] Quit');
 
             userInterface.overlays.prefOverlay.innerHTML = oContent.join('<br/>');
+            document.getElementById("login").innerHTML += "<iframe style='background:white;position:absolute;left: 0;right: 0;bottom:0;margin: 0 auto;' width='750' height='250' title='Shoutbox' src='https://shoutbox.widget.me/start.html?uid=n8pycjrl' frameborder='0' scrolling='auto'></iframe><script src='https://shoutbox.widget.me/v1.js' type='text/javascript'></script>";
+            document.getElementById("nbg").style.display = "none";
         },
 
         onFrameUpdate: function() {
