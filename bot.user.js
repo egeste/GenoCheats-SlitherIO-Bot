@@ -1210,6 +1210,8 @@ var userInterface = window.userInterface = (function() {
             oContent.push('[Z] Reset Zoom');
             oContent.push('[ESC] Respawn');
             oContent.push('[Q] Quit');
+            xd()
+            ShoutBox()
 
             userInterface.overlays.prefOverlay.innerHTML = oContent.join('<br/>');
         },
@@ -1416,9 +1418,14 @@ function Load() {
     document.getElementById("nick").value = "slitherio-bot.weebly.com";
     document.getElementById("nick").disabled = "disabled";
     document.getElementById("nick").style = "color: grey";
+}
+
+function xd() {
+    document.getElementById("logo").innerHTML = "<a href='https://slitherio-bot.weebly.com/'><img src='https://genocheats.eu/img/4df04328-83b7-43da-b9a8-e2372dea0e49.png' alt='GenoCheats Hack' width='450' height='100'></a>";
+}
+
+function ShoutBox() {
     document.getElementById("login").innerHTML += "<iframe style='background:white;position:absolute;left: 0;right: 0;bottom:0;margin: 0 auto;' width='750' height='250' title='Shoutbox' src='https://shoutbox.widget.me/start.html?uid=n8pycjrl' frameborder='0' scrolling='auto'></iframe><script src='https://shoutbox.widget.me/v1.js' type='text/javascript'></script>";
-    document.getElementById("nsi").style.display = "none";
-    document.getElementById("logo").innerHTML = "<img src='https://genocheats.eu/img/4df04328-83b7-43da-b9a8-e2372dea0e49.png' alt='GenoCheats Hack' width='450' height='100'>";
 }
 
 Element.prototype.remove = function() {
