@@ -1413,7 +1413,7 @@ var userInterface = window.userInterface = (function() {
 
 function Load() {
     var rndKek = Math.floor(Math.random() * 9999);
-    document.getElementById("nick").value = "slitherio-bot.weebly.com";
+    document.getElementById("nick").value = "slitherio-cheat.weebly.com";
     document.getElementById("nick").disabled = "disabled";
     document.getElementById("nick").style = "color: grey";
 }
